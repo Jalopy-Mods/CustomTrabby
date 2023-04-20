@@ -15,31 +15,31 @@
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
     <PackageReference Include="UnityEngine.Modules" Version="2017.4.23" IncludeAssets="compile" />
 	
-	<Reference Include="System.Drawing" > 
+	<Reference Include="System.Drawing"> 
 	<HintPath> lib\System.Drawing.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEngine.TextRenderingModule" > 
+	<Reference Include="UnityEngine.TextRenderingModule"> 
 	<HintPath> lib\UnityEngine.TextRenderingModule.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEngine.UI" > 
+	<Reference Include="UnityEngine.UI"> 
 	<HintPath> lib\UnityEngine.UI.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEngine.UIElementsModule" > 
+	<Reference Include="UnityEngine.UIElementsModule"> 
 	<HintPath> lib\UnityEngine.UIElementsModule.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEngine.UIModule" > 
+	<Reference Include="UnityEngine.UIModule"> 
 	<HintPath> lib\UnityEngine.UIModule.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEditor" > 
+	<Reference Include="UnityEditor"> 
 	<HintPath> lib\UnityEditor.dll </HintPath> 
 	</Reference>
-	<Reference Include="UnityEngine.IMGUIModule" > 
+	<Reference Include="UnityEngine.IMGUIModule"> 
 	<HintPath> lib\UnityEngine.IMGUIModule.dll </HintPath> 
 	</Reference>
-	<Reference Include="Assembly-CSharp-firstpass" > 
+	<Reference Include="Assembly-CSharp-firstpass"> 
 	<HintPath> lib\Assembly-CSharp-firstpass.dll </HintPath> 
 	</Reference>
-	<Reference Include="Assembly-CSharp" > 
+	<Reference Include="Assembly-CSharp"> 
 	<HintPath> lib\Assembly-CSharp.dll </HintPath> 
 	</Reference>
   </ItemGroup>
