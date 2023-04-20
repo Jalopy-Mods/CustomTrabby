@@ -3,7 +3,12 @@
 This mod is a mod for the game <b>[Jalopy](https://store.steampowered.com/app/446020/Jalopy/)</b>. 
 <br>It adds a menu, that you can <b>active with F1</b> <i>(or change the key in BepInEx config)</i>.
 
-#### How to install
+#### Preview:
+[Here is a video](https://youtu.be/Vjv1BnLFAPI)
+<br>In this mod, you can change parts color, using RGB, for each parts (actually, I didnt put every parts, but tell me if you want more).
+<br>You can also get a rainbow car, make it goes fast, and make it goes high.
+
+### How to install
 
 For using the mod, you need to have <b>[BepInEx](https://github.com/BepInEx/BepInEx/releases/download/v5.4.21/BepInEx_x64_5.4.21.0.zip)</b> installed.
 
