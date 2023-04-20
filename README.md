@@ -6,7 +6,7 @@ This mod is a mod for the game <b>[Jalopy](https://store.steampowered.com/app/44
 #### Preview:
 [Here is a video](https://youtu.be/Vjv1BnLFAPI)
 <br>In this mod, you can change parts color, using RGB, for each parts (actually, I didnt put every parts, but tell me if you want more).
-<br>You can also get a rainbow car, make it goes fast, and make it goes high.
+<br>You can also get a rainbow car, unlimited fuel, make it goes fast, and make it goes high.
 
 ### How to install
 
