@@ -1,47 +1,32 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System;
 using System.Collections.Generic;
-using BepInEx.Configuration;
+using JaLoader;
 using UnityEngine;
-using BepInEx;
-using System;
+using UnityEngine.SceneManagement;
 
 namespace CustomTrabby
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    public class CustomTrabby : Mod
     {
-        private bool _menuState;
+        public override string ModID => "CustomTrabby";
+        public override string ModName => "Custom Trabby";
+        public override string ModAuthor => "MeblIkea";
+        public override string ModDescription => "Let you change the color of the laika, and the height of the suspension as well.";
+        public override string ModVersion => "1.0.1";
 
+        public override WhenToInit WhenToInit => WhenToInit.InGame; // OR WhenToInit.InMenu (In menu is both)
+
+        private bool _menuState;
         private MonoBehaviour _gui;
         private MouseLook _locker0;
         private MouseLook _locker1;
-        private ConfigEntry<KeyboardShortcut> _toggleMenu;
-        private void Awake()
+
+        public override void Start()
         {
-            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
-            _toggleMenu = Config.Bind("Hotkeys", "Toggle menu", new KeyboardShortcut(KeyCode.F1));
-        }
-        private void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        private void OnDisable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            if (scene.name.Equals("Scn2_CheckpointBravo"))
-            {
-                _locker0 = GameObject.Find("/First Person Controller").GetComponent<MouseLook>();
-                _locker1 = GameObject.Find("/First Person Controller/Main Camera").GetComponent<MouseLook>();
-                _gui = new GameObject("customizer_gui").AddComponent<ModGUI>();
-                _gui.GetComponent<ModGUI>().hidden = true;
-            }
-            else
-            {
-                Destroy(_gui);
-            }
+            _locker0 = GameObject.Find("/First Person Controller").GetComponent<MouseLook>();
+            _locker1 = GameObject.Find("/First Person Controller/Main Camera").GetComponent<MouseLook>();
+            _gui = new GameObject("customizer_gui").AddComponent<ModGUI>();
+            _gui.GetComponent<ModGUI>().hidden = true;
         }
         private void ToggleMenu()
         {
@@ -65,9 +50,9 @@ namespace CustomTrabby
                 _locker1.enabled = true;
             }
         }
-        private void Update()
+        public override void Update()
         {
-            if (_toggleMenu.Value.IsDown())
+            if (Input.GetKeyDown(KeyCode.F1))
             {
                 ToggleMenu();
             }
@@ -219,7 +204,7 @@ namespace CustomTrabby
             else
             {
                 GUI.Box(new Rect(5, 5, 100, 20), "Not ready yet");
-                if (GameObject.Find("FrameHolder/TweenHolder/Frame/EngineHolders/TankHolder/FuelTank") is not null)
+                if (!GameObject.Find("FrameHolder/TweenHolder/Frame/EngineHolders/TankHolder/FuelTank"))
                 {
                     _fuelTank = GameObject.Find("FrameHolder/TweenHolder/Frame/EngineHolders/TankHolder/FuelTank").GetComponent<EngineComponentC>();
                 }
@@ -246,8 +231,7 @@ namespace CustomTrabby
         public void ElementColor(Material element, string[] rgb, string componentName, int offset)
         {
             var chosenColor = new Color(float.Parse(rgb[0])/255, float.Parse(rgb[1])/255, float.Parse(rgb[2])/255);
-            var style = new GUIStyle();
-            style.normal.textColor = chosenColor;
+            var style = new GUIStyle {normal = {textColor = chosenColor}};
             element.color = chosenColor;
             
             if (!hidden)
