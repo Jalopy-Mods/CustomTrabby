@@ -1,7 +1,7 @@
 ﻿## CustomTrabby
 
 This mod is a mod for the game <b>[Jalopy](https://store.steampowered.com/app/446020/Jalopy/)</b>. 
-<br>It adds a menu, that you can <b>active with F1</b> <i>(or change the key in BepInEx config)</i>.
+<br>It adds a menu, that you can <b>active with F1</b>.
 
 #### Preview:
 [Here is a video](https://youtu.be/Vjv1BnLFAPI)
